@@ -22,7 +22,7 @@ export const WeatherProvider = ({children}) => {
     //? INPUT HANDLER
 
     const handleSearch = (value) => {
-        console.log(value);
+
         dispatch({type: 'SET_SEARCH', payload: value})
     }
 
@@ -31,7 +31,7 @@ export const WeatherProvider = ({children}) => {
 
     const getAllWeather = async() => {
         try {
-            if(state.searchValue) {
+            if(state.searchValue && state.searchValue.length >= 0) {
                 handleLoading(true)
                 const response = await axios.get(`${baseurl}/search.json?key=${process.env.API_KEY}&q=${state.searchValue}`)
                 dispatch({type: 'GET_ALL_WEATHER',payload: response.data})
@@ -47,6 +47,7 @@ export const WeatherProvider = ({children}) => {
         handleLoading(true)
         try {
             const singleWeather = await axios.get(`${baseurl}/current.json?key=${process.env.API_KEY}&q=${name}&aqi=yes`)
+            console.log(singleWeather);
             dispatch({type: 'GET_SINGLE_WEATHER', payload: singleWeather.data})
         } catch (error) {
             handleLoading(false)
