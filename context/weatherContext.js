@@ -6,6 +6,7 @@ const initialState = {
     allWeather: [],
     singleWeather: [],
     searchValue: '',
+    darkTheme: true,
     loading: false,
     showAutoComplete: false
 
@@ -62,14 +63,9 @@ export const WeatherProvider = ({children}) => {
         dispatch({type: 'SET_LOADING', payload: value})
     }
 
-    const handleAutocomplete = ()  => {
-        if(state.loading) {
-            handleLoading(true)
-        } else {
-            dispatch({type: 'SHOW_AUTO', payload: true})
-        }
+    const handleTheme = (value) => {
+        dispatch({type: 'SET_THEME', payload: value})
     }
-
 
 
 
@@ -83,6 +79,7 @@ export const WeatherProvider = ({children}) => {
             handleSearch,
             getAllWeather,
             getSingelWeather,
+            handleTheme
         }}>
             {children}
         </WeatherContext.Provider>

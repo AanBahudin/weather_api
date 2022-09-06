@@ -14,6 +14,9 @@ const reducer = (state, action) => {
     if(action.type === 'SET_SUGGEST'){
         return {...state, suggestBox: action.payload}
     }
+    if(action.type === 'SET_THEME') {
+        return {...state, darkTheme: action.payload}
+    }
 }
 
 
