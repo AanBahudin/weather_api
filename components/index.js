@@ -1,13 +1,11 @@
 import Search from './Search'
-import Card from './Card'
-import Cards from './Cards'
 import Information from './Information'
+import AutoComplete from './Autocomplete'
 import WeatherInfo from './WeatherInfo'
 
 export {
     Search,
-    Card,
+    AutoComplete,
     WeatherInfo,
     Information,
-    Cards
 }

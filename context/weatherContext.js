@@ -7,7 +7,8 @@ const initialState = {
     singleWeather: [],
     searchValue: '',
     loading: false,
-    suggestBox: false
+    showAutoComplete: false
+
 }
 
 const WeatherContext = React.createContext()
@@ -61,9 +62,11 @@ export const WeatherProvider = ({children}) => {
         dispatch({type: 'SET_LOADING', payload: value})
     }
 
-    const handleSuggestionBlock = (value) => {
-        if(state.searchValue >= 3) {
-            dispatch({type: 'SET_SUGGEST', payload: true})    
+    const handleAutocomplete = ()  => {
+        if(state.loading) {
+            handleLoading(true)
+        } else {
+            dispatch({type: 'SHOW_AUTO', payload: true})
         }
     }
 
@@ -80,7 +83,6 @@ export const WeatherProvider = ({children}) => {
             handleSearch,
             getAllWeather,
             getSingelWeather,
-            handleSuggestionBlock
         }}>
             {children}
         </WeatherContext.Provider>
