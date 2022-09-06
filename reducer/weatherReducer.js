@@ -11,6 +11,9 @@ const reducer = (state, action) => {
     if(action.type === 'SET_LOADING') {
         return {...state, loading: action.payload}
     }
+    if(action.type === 'SET_SUGGEST'){
+        return {...state, suggestBox: action.payload}
+    }
 }
 
 

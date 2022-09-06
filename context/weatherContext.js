@@ -6,8 +6,8 @@ const initialState = {
     allWeather: [],
     singleWeather: [],
     searchValue: '',
-    loading: false
-
+    loading: false,
+    suggestBox: false
 }
 
 const WeatherContext = React.createContext()
@@ -61,6 +61,14 @@ export const WeatherProvider = ({children}) => {
         dispatch({type: 'SET_LOADING', payload: value})
     }
 
+    const handleSuggestionBlock = (value) => {
+        if(state.searchValue >= 3) {
+            dispatch({type: 'SET_SUGGEST', payload: true})    
+        }
+    }
+
+
+
 
     useEffect(() => {
         getAllWeather()
@@ -71,7 +79,8 @@ export const WeatherProvider = ({children}) => {
             ...state,
             handleSearch,
             getAllWeather,
-            getSingelWeather
+            getSingelWeather,
+            handleSuggestionBlock
         }}>
             {children}
         </WeatherContext.Provider>
