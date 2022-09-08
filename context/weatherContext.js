@@ -5,6 +5,7 @@ import reducer from '../reducer/weatherReducer'
 const initialState = {
     allWeather: [],
     singleWeather: [],
+    forecastInfo: [],
     searchValue: '',
     darkTheme: true,
     loading: false,
@@ -36,7 +37,7 @@ export const WeatherProvider = ({children}) => {
             if(state.searchValue && state.searchValue.length >= 0) {
                 handleLoading(true)
                 const response = await axios.get(`${baseurl}/search.json?key=${process.env.API_KEY}&q=${state.searchValue}`)
-                dispatch({type: 'GET_ALL_WEATHER',payload: response.data})
+                dispatch({type: 'GET_ALL_WEATHER', payload: response.data})
                 handleLoading(false)
             }
             return
@@ -49,8 +50,8 @@ export const WeatherProvider = ({children}) => {
         handleLoading(true)
         try {
             const singleWeather = await axios.get(`${baseurl}/current.json?key=${process.env.API_KEY}&q=${name}&aqi=yes`)
-            console.log(singleWeather);
-            dispatch({type: 'GET_SINGLE_WEATHER', payload: singleWeather.data})
+            const forecastResponse = await axios.get(`${baseurl}/forecast.json?key=${process.env.API_KEY}&q=${state.searchValue}&days=10&aqi=no&alerts=no`)
+            dispatch({type: 'GET_SINGLE_WEATHER', payload: {singleWeather : singleWeather.data, forecastResponse : forecastResponse.data}})
         } catch (error) {
             handleLoading(false)
         }

@@ -1,5 +1,5 @@
 import { useWeatherContext } from "../context/weatherContext"
-import {Information} from "../components"
+import {Information, Forecast, HourlyForcast} from "../components"
 
 const WeatherInfo = () => {
     
@@ -7,9 +7,11 @@ const WeatherInfo = () => {
     const {current, location} = singleWeather
 
     return (
-        <section className="w-[90%] mx-auto border-t-[1px] mt-[8%] py-8">
+        <section className="w-[90%] mx-auto mt-[8%] py-8">
 
             <Information {...current} {...location} data={current}/>
+            <HourlyForcast />
+            <Forecast {...location} />
 
         </section>
     )

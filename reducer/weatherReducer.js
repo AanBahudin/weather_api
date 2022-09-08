@@ -6,7 +6,7 @@ const reducer = (state, action) => {
         return {...state, allWeather: action.payload}
     }
     if (action.type === 'GET_SINGLE_WEATHER') {
-        return {...state, loading: false, singleWeather: action.payload}
+        return {...state, loading: false, singleWeather: action.payload.singleWeather, forecastInfo: action.payload.forecastResponse}
     }
     if(action.type === 'SET_LOADING') {
         return {...state, loading: action.payload}
