@@ -13,7 +13,7 @@ const Search = () => {
 
             <div className='flex items-stretch mx-auto justify-center'>
                 <input value={searchValue} onChange={e => handleSearch(e.target.value)} type='text' placeholder="Search ..." className="text-sans font-dosis text-center w-[40%] rounded-lg bg-transparent border-[1px] border-white/80 py-2 px-4 ring-0 outline-none" />
-                <button onClick={() => handleSearch('')} className='my-auto ml-1 py-2 px-4 border-[1px] active:bg-white active:text-black duration-150 border-white/80 rounded-lg'> <AiOutlineClose /> </button>
+                <button onClick={() => handleSearch('')} className='my-auto ml-1 py-2 px-4 border-[1px] active:bg-purple-400 active:text-black duration-150 border-white/80 rounded-lg'> <AiOutlineClose /> </button>
             </div>
                 {searchValue.length >= 3 ? <AutoComplete /> : null}
             

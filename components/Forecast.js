@@ -1,23 +1,29 @@
+import React from "react";
 import moment from "moment";
 import {filterData, filterDataSecond, description, descriptionSecond, unit, unitSecond} from '../utils/helper'
-// import {BsSunFill, BsFillSunsetFill, BsMoonFill, RiMoonFoggyFill, BsFillMoonStarsFill} from 'react-icons/bs'
 import { useWeatherContext } from "../context/weatherContext";
+import 'aos/dist/aos.css';
+import Aos from "aos";
 
 const Forecast = ({name, region, country}) => {
 
     const {forecastInfo} = useWeatherContext()
     const {forecastday} = forecastInfo.forecast
 
+    React.useEffect(() => {
+        Aos.init({duration: 1000})
+    })
+
     return (
         <section className="mt-20">
 
-            <h1 className="text-5xl font-kanit pl-5 border-l-[2px] my-[3%]"> <span className="text-purple-400"> Forecast </span> For 3 Days</h1>
+            <h1 data-aos="slide-right" className="text-5xl font-kanit pl-5 border-l-[2px] my-[3%]"> <span className="text-purple-400"> Forecast </span> For 3 Days</h1>
 
             <article className="flex flex-col gap-y-6 font-kanit justify-around">
                 {forecastday.map((item, index) => {
                     const {day} = item
                     return (
-                        <div key={index} className="">
+                        <div data-aos="fade-up" key={index} className="">
                             <div className="grid grid-rows-2 grid-flow-col text-[1.1rem]">
 
                                 <section className="row-span-2 flex items-center justify-center flex-col">
@@ -28,7 +34,7 @@ const Forecast = ({name, region, country}) => {
                                 </section>
 
                                 <section className="col-span-4 py-4 px-3">
-                                    <h1 className="py-3 border-b-2 border-purple-400 text-purple-400 font-kanit text-3xl">Weather Information</h1>
+                                    <h1 className="py-3 border-b-2 border-purple-400 text-purple-400 font-kanit text-3xl">Weather Information {index + 1}</h1>
 
                                     <div className="flex justify-evenly w-full py-3">
                                         <article className="w-1/2">

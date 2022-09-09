@@ -1,12 +1,18 @@
 import { useWeatherContext } from "../context/weatherContext"
 import {ImLocation2} from 'react-icons/im'
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import React from "react";
 
 const AutoComplete = () => {
 
     const {allWeather, getSingelWeather, handleSearch, loading} = useWeatherContext()
+    React.useEffect(() => {
+        Aos.init({duration: 300})
+    })
 
     return (
-        <section className="w-[40%] z-10 bg-black border-[1px] border-white/50 mx-auto overflow-y-auto h-[30vh] rounded-lg mt-1 absolute left-[28%]">
+        <section data-aos="fade" className="w-[40%] z-10 bg-black border-[1px] border-white/50 mx-auto overflow-y-auto h-[30vh] rounded-lg mt-1 absolute left-[28%]">
             <section className={`flex flex-wrap ${allWeather ? 'visible' : 'invisible'} flex-col w-full mx-auto items-stretch justify-evenly gap-x-5`}>
             {loading ? <h1 className="mt-20">Loading ...</h1> : (
                 allWeather.map((item) => {

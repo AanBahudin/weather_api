@@ -1,11 +1,19 @@
 import moment from "moment"
 import {ImLocation2} from 'react-icons/im'
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import React from "react";
 
 const Information = ({cloud, name, country, region, lat, lon, tz_id, localtime, air_quality, condition, feelslike_c, humidity, temp_c, uv, gust_kph, vis_km, wind_dir, wind_kph }) => {
+
+    React.useEffect(() => {
+        Aos.init({duration: 1000})
+    })
 
     const {text, icon} = condition
     const {co, no2, o3, so2} = air_quality
     const time = localtime.split(' ')
+
     return (
         <section className="font-kanit">
             <article className="flex  gap-y-1 justify-between text-center">
@@ -26,7 +34,7 @@ const Information = ({cloud, name, country, region, lat, lon, tz_id, localtime, 
                 </div>
             </article>
 
-            <article className="flex flex-col justify-center items-center mt-[5%] mr-4">
+            <article data-aos="fade-up" className="flex flex-col justify-center items-center mt-[5%] mr-4">
                 <h1 className="text-[4rem] font-extralight">{text}</h1>
                 <img className="w-52 animate-pulse mt-6" src={icon} alt="icons" />
                 <h1 className="font-dosis py-3 text-[4rem]">{temp_c} °C</h1>
@@ -35,7 +43,7 @@ const Information = ({cloud, name, country, region, lat, lon, tz_id, localtime, 
 
             <hr className="mx-auto w-[30%] my-[3%]" />
 
-            <article className="flex items-stretch justify-between font-kanit w-[80%] mx-auto">
+            <article data-aos="fade-up" className="flex items-stretch justify-between font-kanit w-[80%] mx-auto">
 
                 <div className="text-left">
                     <h1 className="text-center font-semibold mb-4 text-purple-400">Weather Information</h1>
