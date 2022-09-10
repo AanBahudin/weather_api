@@ -19,22 +19,25 @@ const HourlyForcast = () => {
     return (
         <section className="my-[10%]">
             <h1 data-aos="slide-left" className="text-5xl font-kanit text-right pr-5 border-r-[2px] my-[3%]"> <span className="text-purple-400"> Hourly </span> Predictions Today</h1>
-            <div className="flex flex-row justify-between self-stretch w-[96%] gap-x-4 mx-auto ">
-                {filtering.slice(0,4).map((item, index) => {
-                    const {icon, text} = item.condition
-                    return (
-                        <section data-aos="fade-up" key={index} className="text-sm text-center border-2 py-2 px-4 w-[20%] h-fit rounded-md border-white">
-                            <h1 className="text-[1.7rem] font-kanit text-purple-400 text-left mb-2">{item.time.split(' ')[1]}</h1>
-                            <img src={icon} className="mx-auto w-32" alt="icon" />
-                            <h1 className="text-[2rem] font-dosis">{item.temp_c} °C</h1>
-                            <h1 className="text-center text-[1.3rem] font-kanit mt-4">{text}</h1>
-
-                            <section className="text-[1.3rem] mt-4 flex justify-around">
-                                <h1 className="font-kanit text-purple-400">{item.chance_of_rain} % chance of rain</h1>
+            <div className="flex flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
+                {filtering.length === 0 ? <h1 className="text-center text-purple-400 font-kanit ">No Prediction Right Now</h1> : (
+                    filtering.slice(0,4).map((item, index) => {
+                        const {icon, text} = item.condition
+                        return (
+                            <section data-aos="fade-up" key={index} className="text-sm text-center border-2 py-2 px-4 w-[20%] h-fit rounded-md border-white">
+                                <h1 className="text-[1.7rem] font-kanit text-purple-400 text-left mb-2">{item.time.split(' ')[1]}</h1>
+                                <img src={icon} className="mx-auto w-32" alt="icon" />
+                                <h1 className="text-[2rem] font-dosis">{item.temp_c} °C</h1>
+                                <h1 className="text-center text-[1.3rem] font-kanit mt-4">{text}</h1>
+    
+                                <section className="text-[1.3rem] mt-4 flex justify-around">
+                                    <h1 className="font-kanit text-white"> {item.chance_of_rain} <span className="text-purple-400">%</span> chance of rain</h1>
+                                </section>
                             </section>
-                        </section>
-                    )
-                })}
+                        )
+                    })
+
+                )}
             </div>
         </section>
     )

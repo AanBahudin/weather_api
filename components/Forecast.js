@@ -61,7 +61,7 @@ const Forecast = ({name, region, country}) => {
                                                     <h5 key={index} className="flex flex-row text-left w-full">
                                                         <span className='w-[20%]'>{descriptionSecond[index]}</span>
                                                         <span className='w-[10%]'>:</span>
-                                                        <span className="font-dosis">{day[item]} {unitSecond[index]}</span>
+                                                        <span className="font-dosis"> {item === 'uv' ? `level ${day[item]}` : `${day[item]} ${unitSecond[index]}` } </span>
                                                     </h5>
                                                 )
                                             })}

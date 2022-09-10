@@ -18,7 +18,7 @@ const AutoComplete = () => {
                 allWeather.map((item) => {
                     return (
                         <div key={item.id} onClick={() => {getSingelWeather(item.name), handleSearch('')}}>
-                            <section className="cursor-auto font-kanit text-left flex flex-col hover:bg-cyan-400/70 duration-200 pt-2 border-b-[0.1px] border-white/50">
+                            <section className="cursor-auto font-kanit text-left flex flex-col hover:bg-purple-400 duration-200 pt-2 border-b-[0.1px] border-white/50">
                                 <span className='flex gap-x-2'>
                                     <ImLocation2 size={20} className='fill-white my-auto' />
                                     <h1 className="max-w-[80%] my-auto text-[1.1rem]"> {item.name}, {item.region}, {item.country}</h1>
