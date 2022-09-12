@@ -7,6 +7,7 @@ const initialState = {
     singleWeather: [],
     forecastInfo: [],
     searchValue: '',
+    tabs: 0,
     darkTheme: true,
     loading: false,
     showAutoComplete: false
@@ -19,7 +20,7 @@ export const WeatherProvider = ({children}) => {
 
     // VARIABELS
     const [state, dispatch] = useReducer(reducer, initialState)
-    const baseurl = 'https://api.weatherapi.com/v1'
+    const baseurl = process.env.NODE_ENV === 'production' ? 'https://api.weatherapi.com/v1' : 'http://api.weatherapi.com/v1'
 
 
     //? INPUT HANDLER
@@ -64,10 +65,13 @@ export const WeatherProvider = ({children}) => {
         dispatch({type: 'SET_LOADING', payload: value})
     }
 
+    const handleTabs = (value) => {
+        dispatch({type: 'SET_TABS', payload: value})
+    }
+
     const handleTheme = (value) => {
         dispatch({type: 'SET_THEME', payload: value})
     }
-
 
 
     useEffect(() => {
@@ -80,7 +84,8 @@ export const WeatherProvider = ({children}) => {
             handleSearch,
             getAllWeather,
             getSingelWeather,
-            handleTheme
+            handleTheme,
+            handleTabs
         }}>
             {children}
         </WeatherContext.Provider>
