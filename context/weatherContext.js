@@ -19,7 +19,7 @@ export const WeatherProvider = ({children}) => {
 
     // VARIABELS
     const [state, dispatch] = useReducer(reducer, initialState)
-    const baseurl = 'http://api.weatherapi.com/v1'
+    const baseurl = 'https://api.weatherapi.com/v1'
 
 
     //? INPUT HANDLER
