@@ -34,7 +34,7 @@ const Information = ({data, name, country, region, lat, lon, tz_id, localtime, c
                 <section className="grid grid-cols-3 row-start-1 gap-8 text-white duration-200 row-end-3 col-start-2 col-end-8">
 
                     <div className="drop-shadow-2xl bg-white/[25%] rounded backdrop-blur-3xl relative duration-200 p-7 flex flex-col justify-center">
-                            <h1 className="text-[1.6rem] font-light mb-4 text-center text-white">Weather Information</h1>
+                            <h1 className="text-[1.6rem] font-light mb-4 text-center text-gray-700">Weather Information</h1>
                             <section className="text-[1.2rem]">
                                 {Object.keys(data).filter(item => {
                                     return information.includes(item)

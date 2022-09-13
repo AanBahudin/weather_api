@@ -19,4 +19,4 @@ export const descriptionSecond = ['Visibility', 'Humidity', 'Rain', 'UV level']
 export const unitSecond = ['km/h', 'gr/m3', '%', '']
 
 //! TABS DATA 
-export const tabsDatas = [{id: 0, name: 'Today'}, {id: 1, name: 'Tomorrow'}, {id:2, name: 'After Tomorrow'}]
+export const tabsDatas = [{id: 1, name: 'Tomorrow'}, {id:2, name: 'After Tomorrow'}]
