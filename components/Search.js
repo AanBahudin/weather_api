@@ -28,7 +28,7 @@ const Search = () => {
                 <button onClick={() => handleSearch('')} className='my-auto ml-1 py-2 px-4 border-[1px] active:bg-purple-400 bg-lightPrimary active:text-black duration-150 border-white dark:border-white/80 rounded-lg'> <AiOutlineClose className='fill-white' /> </button>
             </div>
             {searchValue.length >= 3 ? <AutoComplete /> : null}
-        <button className='duration-200 fixed top-4 right-8' onClick={() => {handleTheme(!theme)}}>{theme ? <BsFillSunFill className='fill-white' /> : <BsFillMoonFill className='fill-white' />}</button>
+        <button className='duration-200 z-50 fixed top-4 right-8' onClick={() => {handleTheme(!theme)}}>{theme ? <BsFillSunFill className='fill-white' /> : <BsFillMoonFill className='fill-white' />}</button>
         <button></button>
         </section>
     )

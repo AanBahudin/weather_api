@@ -1,11 +1,11 @@
 import React from "react";
 import moment from "moment";
-import {filterData, filterDataSecond, description, unit, unitSecond} from '../utils/helper'
+import {filterData, description, unit, desc} from '../utils/helper'
 import { useWeatherContext } from "../context/weatherContext";
 import 'aos/dist/aos.css';
 import Aos from "aos";
 
-const Forecast = ({name, region, country}) => {
+const Forecast = () => {
 
     const {tabs, forecastInfo} = useWeatherContext()
     const {forecastday} = forecastInfo.forecast
@@ -15,13 +15,13 @@ const Forecast = ({name, region, country}) => {
         Aos.init({duration: 1000})
     })
     const currentForecast = forecastday[tabs]
-    const desc = ['Name', 'Region', 'Country', 'Lat', 'Lon', 'Timezone']
+    
 
     return (
         <section className="mt-20 w-[80%] mx-auto">
             <article className="grid auto-cols-auto auto-rows-auto gap-8 text-[1.1rem]">
 
-                <div className="row-start-1 row-end-3 col-start-1 col-end-6 grid grid-cols-2 border-white border-[1px]">
+                <div className="row-start-1 row-end-3 col-start-1 col-end-6 grid grid-cols-2 rounded backdrop-blur-3xl bg-white/[20%] drop-shadow-2xl">
 
                     <section className="flex items-center p-4 font-kanit justify-center flex-col">
                         <h1 className="text-3xl text-sky-800">{moment(currentForecast.date).format('LL')}</h1>
@@ -42,7 +42,7 @@ const Forecast = ({name, region, country}) => {
                     </section>
                 </div>
 
-                <div className="row-start-3 row-end-6 col-start-1 col-end-4 py-4 px-2 flex gap-2 flex-wrap items-center justify-evenly border-white border-[1px]">
+                <div className="row-start-3 row-end-6 col-start-1 col-end-4 py-4 px-2 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] drop-shadow-2xl">
                     {Object.keys(currentForecast.day).filter(item => {
                             return filterData.includes(item)
                         }).map((item, index) => {
@@ -58,7 +58,7 @@ const Forecast = ({name, region, country}) => {
 
                 </div>
 
-                <div className="row-start-3 row-end-6 p-4 col-start-4 col-end-6 flex gap-2 flex-wrap items-center justify-evenly border-white border-[1px]">
+                <div className="row-start-3 row-end-6 p-4 col-start-4 col-end-6 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] drop-shadow-2xl">
                         {Object.keys(currentForecast.astro).slice(0,5).map((key, index) => {
                             const newkey = (key.split('_'));
                             return (

@@ -14,6 +14,7 @@ export const filterData = ['avgtemp_c', 'maxtemp_c', 'mintemp_c', 'maxwind_kph',
 export const description = ['Max temp', 'Min temp', 'Average temp', 'Wind Speed', 'Visibility', 'Humidity', 'Rain', 'UV level']
 export const unit = ['°C', '°C', '°C', 'km/h', 'km/h', 'gr/m3', '%', '']
 
+export const desc = ['Name', 'Region', 'Country', 'Lat', 'Lon', 'Timezone']
 
 //! TABS DATA 
 export const tabsDatas = [{id: 1, name: 'Tomorrow'}, {id:2, name: 'After Tomorrow'}]

@@ -16,8 +16,8 @@ const WeatherInfo = () => {
     return (
         <section data-aos="fade-up" className="w-[98%] mx-auto mt-[8%] py-8">
 
-            {/* <Information {...current} {...location} data={current}/> */}
-            {/* <HourlyForcast /> */}
+            <Information {...current} {...location} data={current}/>
+            <HourlyForcast />
             <Tabs />
             <Forecast {...location} />
 
