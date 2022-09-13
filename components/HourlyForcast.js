@@ -27,7 +27,7 @@ const HourlyForcast = () => {
                                 <h1 className="text-[1.7rem] font-kanit text-center text-sky-800 mb-2">{item.time.split(' ')[1]}</h1>
                                 <img src={icon} className="mx-auto w-32" alt="icon" />
                                 <h1 className="text-[2rem] font-dosis">{item.temp_c} °C</h1>
-                                <h1 className="text-center text-[1.2rem] font-kanit mt-4">{text}</h1>
+                                <h1 className="text-center text-black text-[1.2rem] font-kanit mt-4">{text}</h1>
     
                                 <section className="text-[1.3rem] mt-4 flex justify-around">
                                     <h1 className="font-kanit text-sky-800"> {item.chance_of_rain} <span className="text-sky-800">%</span> chance of rain</h1>
