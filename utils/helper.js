@@ -1,3 +1,4 @@
+// INFORMATION
 export const information = ['humidity', 'uv', 'cloud', 'vis_km']
 export const informationDesc = ['Humidity', 'UV Level', 'Cloud', 'Visibility']
 export const informationUnit = ['gr/m3', 'Level', '', 'km']

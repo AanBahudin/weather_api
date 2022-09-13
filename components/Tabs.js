@@ -5,7 +5,7 @@ const Tabs = () => {
 
     const {tabs, handleTabs} = useWeatherContext()
     return (
-        <section className='w-[70%] mx-auto rounded-full font-kanit bg-sky-400 box-border'>
+        <section className='w-[70%] mx-auto rounded-full font-kanit bg-white/[25%] backdrop-blur-3xl box-border'>
             <ul className='w-full mx-auto flex justify-evenly p-3'>
                 {tabsDatas.map(item => {
                     return (

@@ -18,12 +18,12 @@ const HourlyForcast = () => {
 
     return (
         <section className="mt-5 mb-20">
-            <div data-aos="fade-up" className="flex bg-sky-400 drop-shadow-2xl rounded-md p-5 flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
+            <div data-aos="fade-up" className="flex bg-white/[25%] backdrop-blur-3xl drop-shadow-2xl rounded-md p-5 flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
                 {filtering.length === 0 ? <h1 className="text-center text-[#575757] font-kanit ">No Prediction Right Now</h1> : (
                     filtering.slice(0,5).map((item, index) => {
                         const {icon, text} = item.condition
                         return (
-                            <section key={index} className="text-sm text-center text-white backdrop-blur-xl py-2 px-4 w-[20%] h-fit rounded-lg">
+                            <section key={index} className="text-sm text-center text-white py-2 px-4 w-[20%] h-fit rounded-lg">
                                 <h1 className="text-[1.7rem] font-kanit text-center text-sky-800 mb-2">{item.time.split(' ')[1]}</h1>
                                 <img src={icon} className="mx-auto w-32" alt="icon" />
                                 <h1 className="text-[2rem] font-dosis">{item.temp_c} °C</h1>

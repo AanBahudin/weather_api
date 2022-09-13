@@ -14,15 +14,15 @@ const Information = ({data, name, country, region, lat, lon, tz_id, localtime, c
     const {text, icon} = condition
     return (
         <section className="font-kanit place-items-center">
-            <article className=" grid  auto-rows-auto auto-cols-auto gap-8">
+            <article className=" grid auto-rows-auto auto-cols-auto gap-8">
 
-                <div className="grid row-start-1 row-end-6 col-start-1 col-end-2 border-white border-[1px]">
-                    <article data-aos="fade-up" className="flex flex-col rounded-md justify-center drop-shadow-2xl items-center duration-200 bg-sky-400 dark:bg-cardDark p-7">
+                <div className="grid row-start-1 row-end-6 col-start-1 col-end-2">
+                    <article data-aos="fade-up" className="drop-shadow-2xl text-center bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark relative duration-200 p-7 flex flex-col justify-center">
                         <h1 className="text-[3rem] text-sky-800 text-center font-extralight">{text}</h1>
-                        <img className="w-40 animate-pulse mt-6 animate-pulse duration-75" src={icon} alt="icons" />
+                        <img className="w-40 animate-pulse mt-6 duration-75" src={icon} alt="icons" />
                         <h1 className="font-dosis py-3 text-white text-[4rem]">{temp_c} °C</h1>
                         <h1 className="text-[1.5rem] py-3 text-white font-dosis">Feels like {feelslike_c} °C</h1>
-                        <h1 className="dark:text-[#575757] text-sky-800">{name}</h1>
+                        <h1 className="dark:text-[#575757] text-center text-sky-800">{name}</h1>
                         <h1 className="text-[1.1rem] font-extralight flex gap-x-3"> <ImLocation2 size={20} className="fill-sky-800 my-auto"/> {region || 'Unknown'}</h1>
                     </article>
                 </div>
@@ -31,9 +31,9 @@ const Information = ({data, name, country, region, lat, lon, tz_id, localtime, c
                     <Timeline />
                 </section>
 
-                <section className="grid grid-cols-3 row-start-1 gap-8 dark:text-darkPrimary text-white duration-200 row-end-3 col-start-2 col-end-8">
+                <section className="grid grid-cols-3 row-start-1 gap-8 text-white duration-200 row-end-3 col-start-2 col-end-8">
 
-                    <div className="border-white bg-sky-400 dark:bg-cardDark rounded-md drop-shadow-2xl p-7 flex flex-col duration-200 justify-center border-[1px]">
+                    <div className="drop-shadow-2xl bg-white/[25%] rounded backdrop-blur-3xl relative duration-200 p-7 flex flex-col justify-center">
                             <h1 className="text-[1.6rem] font-light mb-4 text-center text-white">Weather Information</h1>
                             <section className="text-[1.2rem]">
                                 {Object.keys(data).filter(item => {
@@ -50,7 +50,8 @@ const Information = ({data, name, country, region, lat, lon, tz_id, localtime, c
                             </section>
                         </div>
 
-                    <div className="dark:border-white drop-shadow-2xl rounded-md bg-sky-400 dark:bg-cardDark duration-200 p-7 flex flex-col justify-center border-[1px]">
+                    <div className=" drop-shadow-2xl bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark relative duration-200 p-7 flex flex-col justify-center">
+                        {/* <div className="w-full h-full absolute -z-10 blur-2xl rounded-md top-0 right-0"></div> */}
                         <h1 className="text-center font-light mb-4 dark:text-white text-secondary">Wind Information</h1>
                         <section className="text-[1.2rem] mt-[3]">
                             {Object.keys(data).filter(item => {
@@ -67,7 +68,7 @@ const Information = ({data, name, country, region, lat, lon, tz_id, localtime, c
                         </section>
                     </div>
 
-                    <div className="border-white bg-sky-400 dark:bg-cardDark duration-200 rounded-md drop-shadow-2xl p-7 flex flex-col justify-center border-[1px]">
+                    <div className="drop-shadow-2xl bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark relative duration-200 p-7 flex flex-col justify-center">
                         <h1 className="text-[1.6rem] font-light mb-4 text-center dark:text-white">Air Quality</h1>
                         <section className="text-[1.2rem] flex flex-wrap justify-center items-center mt-[3]">
                             {Object.keys(data.air_quality).filter(item => {
