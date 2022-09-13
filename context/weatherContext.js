@@ -7,7 +7,7 @@ const initialState = {
     singleWeather: [],
     forecastInfo: [],
     searchValue: '',
-    tabs: 0,
+    tabs: 1,
     darkTheme: true,
     loading: false,
     showAutoComplete: false
