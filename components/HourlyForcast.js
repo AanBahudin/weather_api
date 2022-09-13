@@ -18,19 +18,19 @@ const HourlyForcast = () => {
 
     return (
         <section className="mt-5 mb-20">
-            <div className="flex flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
+            <div data-aos="fade-up" className="flex bg-sky-400 drop-shadow-2xl rounded-md p-5 flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
                 {filtering.length === 0 ? <h1 className="text-center text-[#575757] font-kanit ">No Prediction Right Now</h1> : (
                     filtering.slice(0,5).map((item, index) => {
                         const {icon, text} = item.condition
                         return (
-                            <section data-aos="fade-up" key={index} className="text-sm text-center backdrop-blur-xl py-2 px-4 w-[20%] h-fit rounded-lg">
-                                <h1 className="text-[1.7rem] font-kanit text-center text-[#575757] text-left mb-2">{item.time.split(' ')[1]}</h1>
+                            <section key={index} className="text-sm text-center text-white backdrop-blur-xl py-2 px-4 w-[20%] h-fit rounded-lg">
+                                <h1 className="text-[1.7rem] font-kanit text-center text-sky-800 mb-2">{item.time.split(' ')[1]}</h1>
                                 <img src={icon} className="mx-auto w-32" alt="icon" />
                                 <h1 className="text-[2rem] font-dosis">{item.temp_c} °C</h1>
-                                <h1 className="text-center text-[1.3rem] font-kanit mt-4">{text}</h1>
+                                <h1 className="text-center text-[1.2rem] font-kanit mt-4">{text}</h1>
     
                                 <section className="text-[1.3rem] mt-4 flex justify-around">
-                                    <h1 className="font-kanit text-white"> {item.chance_of_rain} <span className="text-purple-400">%</span> chance of rain</h1>
+                                    <h1 className="font-kanit text-sky-800"> {item.chance_of_rain} <span className="text-sky-800">%</span> chance of rain</h1>
                                 </section>
                             </section>
                         )

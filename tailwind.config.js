@@ -12,7 +12,8 @@ module.exports = {
         'kanit': ['Kanit', 'sans-serif']
       },
       colors : {
-        'lightPrimary': '#3D84A8',
+        'bgLight': '#4BB3FD',
+        'bgDark': '#222222',
         'lightSecondary': '#9B9B9B',
         'darkPrimary': '#4C4C4C',
         'darkSecondary': '#656565'
