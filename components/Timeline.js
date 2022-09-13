@@ -7,19 +7,19 @@ const Timeline = ({}) => {
     const data = forecastInfo.forecast.forecastday[0].astro
 
     return (
-        <ol className="items-center mx-auto sm:flex">
+        <ol className="items-center mx-auto w-full sm:flex">
             {Object.keys(data).slice(0,4).map((item, index) => {
                 return (
                     <li key={index} className="relative mb-6 sm:mb-0">
                         <div className="flex items-center">
-                            <div className="flex z-10 justify-center items-center w-6 h-6  rounded-full ring-0 ring-black bg-white sm:ring-8ring-gray-900 shrink-0">
+                            <div className="flex z-10 justify-between items-center w-6 h-6 rounded-full  bg-white  shrink-0">
                                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 11h6v1h-7v-9h1v8z"/></svg>
                             </div>
-                            <div className="hidden sm:flex w-full bg-purple-400 h-0.5"></div>
+                            <div className="hidden sm:flex w-52 bg-purple-400 h-0.5"></div>
                         </div>
                         <div className="mt-3 sm:pr-16">
                             <h3 className="flex items-center mb-1 text-lg font-kanit">{item}</h3>
-                            <h3 className="block mb-2 text-sm font-normal leading-none text-purple-400">{data[item]}</h3>
+                            <h3 className="block mb-2 text-sm font-normal leading-none text-[#575757]">{data[item]}</h3>
                         </div>
                     </li>
                 )
@@ -40,7 +40,7 @@ export default Timeline
         //                  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 11h6v1h-7v-9h1v8z"/></svg>
         //                 </span>
         //                 <h3 className="flex items-center mb-1 text-lg font-kanit">{item}</h3>
-        //                 <time className="block mb-2 text-sm font-normal leading-none text-purple-400">{data[item]}</time>
+        //                 <time className="block mb-2 text-sm font-normal leading-none text-[#575757]">{data[item]}</time>
         //             </li>
 
         //         )
