@@ -10,6 +10,12 @@ module.exports = {
       fontFamily : {
         'dosis': ['Dosis', 'sans-serif'],
         'kanit': ['Kanit', 'sans-serif']
+      },
+      colors : {
+        'lightPrimary': '#3D84A8',
+        'lightSecondary': '#9B9B9B',
+        'darkPrimary': '#4C4C4C',
+        'darkSecondary': '#656565'
       }
     },
   },
