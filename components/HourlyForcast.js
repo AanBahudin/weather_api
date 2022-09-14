@@ -18,7 +18,7 @@ const HourlyForcast = () => {
 
     return (
         <section className="mt-5 mb-20">
-            <div data-aos="fade-up" className="flex bg-white/[25%] backdrop-blur-3xl drop-shadow-2xl rounded-md p-5 flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
+            <div data-aos="fade-up" className="flex bg-white/[25%] backdrop-blur-3xl  rounded-md p-5 flex-row justify-around self-stretch w-[96%] gap-x-4 mx-auto ">
                 {filtering.length === 0 ? <h1 className="text-center text-[#575757] font-kanit ">No Prediction Right Now</h1> : (
                     filtering.slice(0,5).map((item, index) => {
                         const {icon, text} = item.condition

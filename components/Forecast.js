@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import { filtering } from "../function/filtering";
 import {filterData, description, unit, desc} from '../utils/helper'
 import { useWeatherContext } from "../context/weatherContext";
 import 'aos/dist/aos.css';
@@ -21,7 +22,7 @@ const Forecast = () => {
         <section className="mt-20 w-[80%] mx-auto">
             <article className="grid auto-cols-auto auto-rows-auto gap-8 text-[1.1rem]">
 
-                <div className="row-start-1 row-end-3 col-start-1 col-end-6 grid grid-cols-2 rounded backdrop-blur-3xl bg-white/[20%] drop-shadow-2xl">
+                <div className="row-start-1 row-end-3 col-start-1 col-end-6 grid grid-cols-2 rounded backdrop-blur-3xl bg-white/[20%] ">
 
                     <section className="flex items-center p-4 font-kanit justify-center flex-col">
                         <h1 className="text-3xl text-sky-800">{moment(currentForecast.date).format('LL')}</h1>
@@ -42,23 +43,19 @@ const Forecast = () => {
                     </section>
                 </div>
 
-                <div className="row-start-3 row-end-6 col-start-1 col-end-4 py-4 px-2 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] drop-shadow-2xl">
-                    {Object.keys(currentForecast.day).filter(item => {
-                            return filterData.includes(item)
-                        }).map((item, index) => {
+                <div className="row-start-3 row-end-6 col-start-1 col-end-4 py-4 px-2 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] ">
+                        {filtering(currentForecast.day, filterData).map((item, index) => {
                             return (
                                 <h5 key={index} className="flex flex-row gap-x-2 text-left">
                                     <span className='font-kanit text-sky-800 text-[1.2rem]'>{description[index]} :</span>
                                     {/* <span className='w-[15%] md:w-[10%]'>:</span> */}
                                     <span className="font-dosis">{currentForecast.day[item]} {unit[index]}</span>
                                 </h5>
-
                             )
                         })}
-
                 </div>
 
-                <div className="row-start-3 row-end-6 p-4 col-start-4 col-end-6 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] drop-shadow-2xl">
+                <div className="row-start-3 row-end-6 p-4 col-start-4 col-end-6 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] ">
                         {Object.keys(currentForecast.astro).slice(0,5).map((key, index) => {
                             const newkey = (key.split('_'));
                             return (

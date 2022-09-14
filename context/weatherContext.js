@@ -53,6 +53,8 @@ export const WeatherProvider = ({children}) => {
             const singleWeather = await axios.get(`${baseurl}/current.json?key=${process.env.API_KEY}&q=${name}&aqi=yes`)
             const forecastResponse = await axios.get(`${baseurl}/forecast.json?key=${process.env.API_KEY}&q=${state.searchValue}&days=10&aqi=yes&alerts=no`)
             dispatch({type: 'GET_SINGLE_WEATHER', payload: {singleWeather : singleWeather.data, forecastResponse : forecastResponse.data}})
+            console.log(state.singleWeather)
+            console.log(state.forecastInfo)
         } catch (error) {
             handleLoading(false)
         }

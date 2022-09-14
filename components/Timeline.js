@@ -15,7 +15,7 @@ const Timeline = ({}) => {
                             <div className="flex z-10 justify-between items-center w-6 h-6 rounded-full  bg-white  shrink-0">
                                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 11h6v1h-7v-9h1v8z"/></svg>
                             </div>
-                            <div className="hidden sm:flex w-52 bg-bgLight h-0.5"></div>
+                            <div className="hidden sm:flex w-52 bg-gray-700 h-0.5"></div>
                         </div>
                         <div className="mt-3 sm:pr-16">
                             <h3 className="flex items-center mb-1 text-sky-800 text-lg font-kanit">{item}</h3>
