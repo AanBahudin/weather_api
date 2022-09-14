@@ -33,7 +33,7 @@ const Forecast = () => {
                 </section>
             </div>
 
-            <div className="row-start-3 row-end-6 col-start-1 col-end-4 py-4 px-2 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] dark:bg-cardDark duration-200">
+            <div className="md:row-start-3 md:row-end-6 md:col-start-1 md:col-end-4 py-4 px-2 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] dark:bg-cardDark duration-200">
                     {filtering(currentForecast.day, filterData).map((item, index) => {
                         return (
                             <h5 key={index} className="flex flex-row gap-x-2 text-left">
@@ -45,7 +45,7 @@ const Forecast = () => {
                     })}
             </div>
 
-            <div className="row-start-3 row-end-6 p-4 col-start-4 col-end-6 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] dark:bg-cardDark duration-200">
+            <div className="md:row-start-3 md:row-end-6 p-4 md:col-start-4 md:col-end-6 flex gap-2 flex-wrap items-center justify-evenly rounded backdrop-blur-3xl bg-white/[20%] dark:bg-cardDark duration-200">
                     {Object.keys(currentForecast.astro).slice(0,5).map((key, index) => {
                         const newkey = (key.split('_'));
                         return (

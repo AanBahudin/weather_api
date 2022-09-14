@@ -7,10 +7,10 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
     const {text, icon} = condition
 
     return (
-        <section className="font-kanit place-items-center justify-items-center grid auto-rows-auto auto-cols-auto md:gap-8">
+        <section className="font-kanit grid auto-rows-auto auto-cols-auto md:gap-8">
 
-            <div className="grid md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-2 xl:row-start-1 xl:row-end-6">
-                <article data-aos="fade-up" className=" text-center text-white bg-white/[25%] rounded w-[98%] mx-auto backdrop-blur-3xl dark:bg-cardDark  relative duration-200 p-3 md:p-7 flex flex-col justify-center">
+            <div className="grid col-start-1 place-items-center justify-items-center col-end-2 row-start-1 row-end-2 md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-2 xl:row-start-1 xl:row-end-6">
+                <article data-aos="fade-up" className=" text-center text-white bg-white/[25%] rounded w-[98%] mx-auto backdrop-blur-3xl dark:bg-cardDark  relative duration-200 p-7 flex flex-col justify-center">
                     <h1 className="text-[2.5rem] md:text-[3rem] text-sky-800 dark:text-silver font-extralight">{text}</h1>
                     <img className="w-40 mx-auto animate-pulse mt-6 duration-75" src={icon} alt="icons" />
                     <h1 className="font-dosis py-3 text-[2.5rem] md:text-[3rem]">{temp_c} °C</h1>
@@ -24,7 +24,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                 <Timeline />
             </section>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-12 gap-8 text-white duration-200">
+            <section className="grid grid-cols-1 w-[98%] mx-auto sm:grid-cols-2 lg:grid-cols-3 md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-12 gap-8 text-white duration-200">
 
                 <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark dark:text-darkSecondary text-sky-800 relative duration-200 p-7 flex flex-col justify-center">
                         <h1 className="text-[1.6rem] font-light mb-4 text-center text-white">Weather Information</h1>
@@ -40,7 +40,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                             </section>
                     </div>
 
-                <div className="bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark dark:text-darkSecondary text-sky-800 relative duration-200 p-7 flex flex-col justify-center">
+                <div className="bg-white/[25%] w-[98%] mx-auto rounded backdrop-blur-3xl dark:bg-cardDark dark:text-darkSecondary text-sky-800 relative duration-200 p-7 flex flex-col justify-center">
                     <h1 className="text-[1.6rem] font-light mb-4 text-center text-white">Wind Information</h1>
                     <section className="text-[1.2rem] mt-[3]">
                         {filtering(data, informationSec).map((item, index) => {
@@ -55,7 +55,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                     </section>
                 </div>
 
-                <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark dark:text-darkSecondary text-sky-800 relative duration-200 p-7 flex flex-col justify-center">
+                <div className=" bg-white/[25%] w-[98%] mx-auto rounded backdrop-blur-3xl dark:bg-cardDark dark:text-darkSecondary text-sky-800 relative duration-200 p-7 flex flex-col justify-center">
                     <h1 className="text-[1.6rem] font-light mb-4 text-center text-white">Air Quality</h1>
                     <section className="text-[1.2rem] mt-[3]">
                         {filtering(data.air_quality, airQualityValue).map((item, index) => {
