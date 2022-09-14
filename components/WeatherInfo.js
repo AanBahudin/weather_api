@@ -1,15 +1,8 @@
 import { useWeatherContext } from "../context/weatherContext"
 import {Information, Forecast, HourlyForcast, Tabs} from "../components"
-import 'aos/dist/aos.css';
-import Aos from "aos";
-import React from "react";
 
 const WeatherInfo = () => {
     
-    React.useEffect(() => {
-        Aos.init({duration: 1000})
-    })
-
     const {singleWeather} = useWeatherContext()
     const {current, location} = singleWeather
 

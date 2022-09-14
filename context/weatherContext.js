@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useReducer, useContext } from 'react'
 import reducer from '../reducer/weatherReducer'
+import 'aos/dist/aos.css';
+import Aos from "aos";
 
 const initialState = {
     allWeather: [],
@@ -22,6 +24,10 @@ export const WeatherProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
     const baseurl = process.env.NODE_ENV === 'production' ? 'https://api.weatherapi.com/v1' : 'http://api.weatherapi.com/v1'
 
+
+    React.useEffect(() => {
+        Aos.init({duration: 200})
+    })
 
     //? INPUT HANDLER
 

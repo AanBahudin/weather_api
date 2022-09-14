@@ -1,17 +1,9 @@
 import { useWeatherContext } from "../context/weatherContext"
-import 'aos/dist/aos.css';
-import Aos from "aos";
-import React from "react";
 
 const HourlyForcast = () => {
 
-    React.useEffect(() => {
-        Aos.init({duration: 1000})
-    })
-
     const {forecastInfo} = useWeatherContext()
     const {hour} = forecastInfo.forecast.forecastday[0]
-
     const filtering = hour.filter(item => {
         return Number(item.time_epoch) > Number(String(new Date().getTime()).slice(0,8) + '00')
     })

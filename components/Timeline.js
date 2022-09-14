@@ -1,13 +1,13 @@
+import 'aos/dist/aos.css';
+import React from "react";
 import { useWeatherContext } from "../context/weatherContext" 
 
 const Timeline = ({}) => {
-
     const {forecastInfo} = useWeatherContext();
-
     const data = forecastInfo.forecast.forecastday[0].astro
 
     return (
-        <ol className="items-center mx-auto w-full sm:flex">
+        <ol data-aos="fade" className="items-center mx-auto w-full sm:flex">
             {Object.keys(data).slice(0,4).map((item, index) => {
                 return (
                     <li key={index} className="relative mb-6 sm:mb-0">

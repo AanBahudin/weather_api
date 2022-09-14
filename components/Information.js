@@ -2,15 +2,8 @@ import {ImLocation2} from 'react-icons/im'
 import { filtering } from '../function/filtering';
 import { information, informationDesc, informationUnit, informationSec, informationDescSec, informationUnitSec, airQualityDesc, airQualityValue } from "../utils/helper";
 import {Timeline} from '../components'
-import 'aos/dist/aos.css';
-import Aos from "aos";
-import React from "react";
 
 const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
-
-    React.useEffect(() => {
-        Aos.init({duration: 1000})
-    })
     const {text, icon} = condition
 
     return (
