@@ -2,22 +2,11 @@ import {AutoComplete} from '../components'
 import {AiOutlineClose} from 'react-icons/ai'
 import {BsFillSunFill, BsFillMoonFill} from 'react-icons/bs'
 import { useWeatherContext } from "../context/weatherContext"
-import { useState } from 'react'
 
 
 const Search = () => {
 
-    const {searchValue, handleSearch} = useWeatherContext()
-    const [theme, setTheme] = useState(false)
-
-    const handleTheme = (value) => {
-        setTheme(value)
-        if(value) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    }
+    const {searchValue, handleSearch, handleTheme, theme} = useWeatherContext()
 
     return (
         <section className="w-full text-center h-fit relative"> 

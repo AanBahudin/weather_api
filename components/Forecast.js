@@ -6,8 +6,8 @@ import { useWeatherContext } from "../context/weatherContext";
 const Forecast = () => {
 
     const {tabs, forecastInfo} = useWeatherContext()
-    const {forecastday} = forecastInfo.forecast
-    const currentForecast = forecastday[tabs]
+    const {forecastday} = state.forecastInfo.forecast
+    const currentForecast = forecastday[state.tabs]
 
     return (
         <section className="mt-20 w-[80%] mx-auto">

@@ -15,7 +15,7 @@ const reducer = (state, action) => {
         return {...state, tabs: action.payload}
     }
     if(action.type === 'SET_THEME') {
-        return {...state, darkTheme: action.payload}
+        return {...state, theme: action.payload}
     }
 }
 

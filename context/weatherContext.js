@@ -10,7 +10,7 @@ const initialState = {
     forecastInfo: [],
     searchValue: '',
     tabs: 1,
-    darkTheme: true,
+    theme: false,
     loading: false,
     showAutoComplete: false
 
@@ -79,7 +79,16 @@ export const WeatherProvider = ({children}) => {
 
     const handleTheme = (value) => {
         dispatch({type: 'SET_THEME', payload: value})
+        if(value) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
     }
+
+
+    //? components Data
+    
 
 
     useEffect(() => {
