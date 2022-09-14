@@ -18,13 +18,13 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
             <article className=" grid auto-rows-auto auto-cols-auto gap-8">
 
                 <div className="grid row-start-1 row-end-6 col-start-1 col-end-2">
-                    <article data-aos="fade-up" className=" text-center bg-white/[25%] rounded backdrop-blur-3xl relative duration-200 p-7 flex flex-col justify-center">
-                        <h1 className="text-[3rem] text-sky-800 text-center font-extralight">{text}</h1>
+                    <article data-aos="fade-up" className=" text-center bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
+                        <h1 className="text-[3rem] text-sky-800 dark:text-[#BFBFBF] text-center font-extralight">{text}</h1>
                         <img className="w-40 mx-auto animate-pulse mt-6 duration-75" src={icon} alt="icons" />
                         <h1 className="font-dosis py-3 text-white text-[4rem]">{temp_c} °C</h1>
                         <h1 className="text-[1.5rem] py-3 text-white font-dosis">Feels like {feelslike_c} °C</h1>
                         <h1 className="dark:text-[#575757] text-center text-sky-800">{name}</h1>
-                        <h1 className="text-[1.1rem] text-center font-extralight flex gap-x-3"> <ImLocation2 size={20} className="fill-sky-800 my-auto"/> {region || 'Unknown'}</h1>
+                        <h1 className="text-[1.1rem] text-center dark:text-[#575757] font-extralight flex gap-x-3"> <ImLocation2 size={20} className="fill-sky-800 my-auto"/> {region || 'Unknown'}</h1>
                     </article>
                 </div>
 
@@ -34,46 +34,46 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
 
                 <section className="grid grid-cols-3 row-start-1 gap-8 text-white duration-200 row-end-3 col-start-2 col-end-8">
 
-                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl relative duration-200 p-7 flex flex-col justify-center">
-                            <h1 className="text-[1.6rem] font-light mb-4 text-center text-gray-700">Weather Information</h1>
+                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
+                            <h1 className="text-[1.6rem] font-light mb-4 text-center text-white dark:text-[#BFBFBF]">Weather Information</h1>
                                 <section className="text-[1.2rem]">
                                     {filtering(data, information).map((item, index) => {
                                         return (
                                             <h1 key={index} className="flex flex-row text-left w-full text-sky-800 font-montserrat font-[600] text-md my-1"> 
-                                            <span className="w-[45%] md:w-[40%]">{informationDesc[index]}</span>
-                                            <span className='w-[15%] md:w-[20%]'>:</span>
-                                            <span className="font-dosis">{index === 1  ? `${informationUnit[index]} ${data[item]}` : `${data[item]} ${informationUnit[index]}` }</span> 
+                                            <span className="w-[45%] md:w-[40%] dark:text-[#575757]">{informationDesc[index]}</span>
+                                            <span className='w-[15%] md:w-[20%] dark:text-[#575757]'>:</span>
+                                            <span className="font-dosis dark:text-[#BFBFBF]">{index === 1  ? `${informationUnit[index]} ${data[item]}` : `${data[item]} ${informationUnit[index]}` }</span> 
                                         </h1>
                                         )
                                     })}
                                 </section>
                         </div>
 
-                    <div className="  bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark relative duration-200 p-7 flex flex-col justify-center">
+                    <div className="  bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
                         {/* <div className="w-full h-full absolute -z-10 blur-2xl rounded-md top-0 right-0"></div> */}
-                        <h1 className="text-center font-light mb-4 dark:text-white text-secondary">Wind Information</h1>
+                        <h1 className="text-center font-light mb-4 dark:text-[#BFBFBF] text-secondary">Wind Information</h1>
                         <section className="text-[1.2rem] mt-[3]">
                             {filtering(data, informationSec).map((item, index) => {
                                 return (
                                     <h1 key={index} className="flex flex-row text-left w-full font-montserrat text-sky-800 font-[600] text-md my-1"> 
-                                        <span className="w-[45%] md:w-[40%]">{informationDescSec[index]}</span>
-                                        <span className='w-[15%] md:w-[10%]'>:</span>
-                                        <span className="font-dosis">{data[item]} {informationUnitSec[index]}</span> 
+                                        <span className="w-[45%] md:w-[40%] dark:text-[#575757]">{informationDescSec[index]}</span>
+                                        <span className='w-[15%] md:w-[10%] dark:text-[#575757]'>:</span>
+                                        <span className="font-dosis dark:text-[#BFBFBF]">{data[item]} {informationUnitSec[index]}</span> 
                                     </h1>
                                 )
                             })}
                         </section>
                     </div>
 
-                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark relative duration-200 p-7 flex flex-col justify-center">
-                        <h1 className="text-[1.6rem] font-light mb-4 text-center dark:text-white">Air Quality</h1>
+                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
+                        <h1 className="text-[1.6rem] font-light mb-4 text-center dark:text-[#BFBFBF]">Air Quality</h1>
                         <section className="text-[1.2rem] flex flex-wrap justify-center items-center mt-[3]">
                             {filtering(data.air_quality, airQualityValue).map((item, index) => {
                                 return (
                                     <h1 key={index} className="flex flex-row text-left w-full font-montserrat text-sky-800 font-[600] text-md my-1"> 
-                                        <span className="w-[45%] md:w-[30%]">{airQualityDesc[index]}</span>
-                                        <span className='w-[15%] md:w-[30%]'>:</span>
-                                        <span className="font-dosis">{data.air_quality[item].toFixed(2)}</span> 
+                                        <span className="w-[45%] md:w-[30%] dark:text-[#575757]">{airQualityDesc[index]}</span>
+                                        <span className='w-[15%] md:w-[30%] dark:text-[#575757]'>:</span>
+                                        <span className="font-dosis dark:text-[#BFBFBF]">{data.air_quality[item].toFixed(2)}</span> 
                                     </h1>
                                 )
                             })}
