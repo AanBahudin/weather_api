@@ -13,16 +13,16 @@ const AutoComplete = () => {
     })
 
     return (
-        <section data-aos="fade" className="w-[40%] z-10 bg-white/30 backdrop-blur-3xl dark:bg-black border-[1px] border-white/50 mx-auto overflow-y-auto h-[30vh] rounded-lg mt-1 absolute left-[28%]">
+        <section data-aos="fade" className="w-[40%] z-10 bg-white/30 backdrop-blur-3xl dark:bg-[#272727] duration-200 border-[1px] border-white/50 mx-auto overflow-y-auto h-[30vh] p-5 rounded-lg mt-1 absolute left-[28%]">
             <section className={`flex flex-wrap ${allWeather ? 'visible' : 'invisible'} flex-col w-full mx-auto items-stretch justify-around gap-x-5`}>
             {loading ? <Loading /> : (
                 allWeather.map((item) => {
                     return (
                         <div key={item.id} onClick={() => {getSingelWeather(item.name), handleSearch('')}}>
-                            <section className="cursor-auto font-kanit text-left hover:bg-sky-400 duration-200">
+                            <section className="cursor-auto font-kanit text-left hover:bg-sky-400 dark:hover:bg-[#BFBFBF] duration-200">
                                 <span className='flex gap-x-2'>
-                                    <ImLocation2 size={20} className='fill-gray-800 my-auto' />
-                                    <h1 className="max-w-[80%] text-gray-800 my-auto text-[1.1rem]"> {item.name}, {item.region}, {item.country}</h1>
+                                    <ImLocation2 size={20} className='fill-gray-800 dark:fill-[#575757] my-auto' />
+                                    <h1 className="max-w-[80%] text-sky-800 dark:text-[#575757] my-auto text-[1.1rem]"> {item.name}, {item.region}, {item.country}</h1>
                                 </span>
                             </section>
                         </div>

@@ -34,7 +34,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
 
                 <section className="grid grid-cols-3 row-start-1 gap-8 text-white duration-200 row-end-3 col-start-2 col-end-8">
 
-                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
+                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727] relative duration-200 p-7 flex flex-col justify-center">
                             <h1 className="text-[1.6rem] font-light mb-4 text-center text-white dark:text-[#BFBFBF]">Weather Information</h1>
                                 <section className="text-[1.2rem]">
                                     {filtering(data, information).map((item, index) => {
@@ -49,7 +49,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                                 </section>
                         </div>
 
-                    <div className="  bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
+                    <div className="  bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727] relative duration-200 p-7 flex flex-col justify-center">
                         {/* <div className="w-full h-full absolute -z-10 blur-2xl rounded-md top-0 right-0"></div> */}
                         <h1 className="text-center font-light mb-4 dark:text-[#BFBFBF] text-secondary">Wind Information</h1>
                         <section className="text-[1.2rem] mt-[3]">
@@ -65,7 +65,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                         </section>
                     </div>
 
-                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727]  relative duration-200 p-7 flex flex-col justify-center">
+                    <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-[#272727] relative duration-200 p-7 flex flex-col justify-center">
                         <h1 className="text-[1.6rem] font-light mb-4 text-center dark:text-[#BFBFBF]">Air Quality</h1>
                         <section className="text-[1.2rem] flex flex-wrap justify-center items-center mt-[3]">
                             {filtering(data.air_quality, airQualityValue).map((item, index) => {
