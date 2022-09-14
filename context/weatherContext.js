@@ -88,8 +88,6 @@ export const WeatherProvider = ({children}) => {
 
 
     //? components Data
-    
-
 
     useEffect(() => {
         getAllWeather()
