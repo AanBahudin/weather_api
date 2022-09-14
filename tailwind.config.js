@@ -12,11 +12,11 @@ module.exports = {
         'kanit': ['Kanit', 'sans-serif']
       },
       colors : {
-        'bgLight': '#4BB3FD',
-        'bgDark': '#222222',
-        'lightSecondary': '#9B9B9B',
-        'darkPrimary': '#4C4C4C',
-        'darkSecondary': '#656565'
+        'silver': '#BFBFBF',
+        'cardDark': '#272727',
+        'darkSecondary': '#575757',
+        'darkBg': '#1D1E18',
+        'lightBg': '#5ab2f7'
       }
     },
   },

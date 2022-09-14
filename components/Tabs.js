@@ -9,7 +9,7 @@ const Tabs = () => {
             <ul className='w-full mx-auto flex justify-evenly p-3'>
                 {tabsDatas.map(item => {
                     return (
-                        <li onClick={() => handleTabs(item.id)} className={`${tabs === item.id ? 'border-b-[2px]' : null} dark:text-[#BFBFBF] cursor-default text-sky-800 place-self-strech duration-200 border-white py-1`} key={item.id}>{item.name}</li>
+                        <li onClick={() => handleTabs(item.id)} className={`${tabs === item.id ? 'border-b-[2px]' : null} dark:text-silver cursor-default text-sky-800 place-self-strech duration-200 border-white py-1`} key={item.id}>{item.name}</li>
                     )
                 })}
             </ul>
