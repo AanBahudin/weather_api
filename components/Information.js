@@ -16,7 +16,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                     <h1 className="font-dosis py-3 text-[3rem]">{temp_c} °C</h1>
                     <h1 className="text-[1.5rem] font-dosis">Feels like {feelslike_c} °C</h1>
                     <h1 className="dark:text-darkSecondary text-sky-800">{name}</h1>
-                    <h1 className="text-[1.1rem] text-sky-800 dark:text-darkSecondary mx-auto font-extralight flex gap-x-3"> <ImLocation2 size={20} className="fill-sky-800 my-auto"/> {region || 'Unknown'}</h1>
+                    <h1 className="text-[1.1rem] text-sky-800 dark:text-darkSecondary mx-auto font-extralight flex gap-x-3"> <ImLocation2 size={20} className="fill-sky-800 dark:fill-darkSecondary my-auto"/> {region || 'Unknown'}</h1>
                 </article>
             </div>
 
