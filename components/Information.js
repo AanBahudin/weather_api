@@ -7,9 +7,9 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
     const {text, icon} = condition
 
     return (
-        <section className="font-kanit md:place-items-center grid auto-rows-auto auto-cols-auto md:gap-8">
+        <section className="font-kanit place-items-center justify-items-center grid auto-rows-auto auto-cols-auto md:gap-8">
 
-            <div className="grid md:row-start-1 md:row-end-6 md:col-start-1 md:col-end-2">
+            <div className="grid md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-2 xl:row-start-1 xl:row-end-6">
                 <article data-aos="fade-up" className=" text-center text-white bg-white/[25%] rounded w-[98%] mx-auto backdrop-blur-3xl dark:bg-cardDark  relative duration-200 p-3 md:p-7 flex flex-col justify-center">
                     <h1 className="text-[2.5rem] md:text-[3rem] text-sky-800 dark:text-silver font-extralight">{text}</h1>
                     <img className="w-40 mx-auto animate-pulse mt-6 duration-75" src={icon} alt="icons" />
@@ -20,11 +20,11 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                 </article>
             </div>
 
-            <section className="grid row-start-2 row-end-3 col-start-1 col-end-2 md:grid-cols-2 md:row-start-3 md:row-end-6 gap-8 md:col-start-2 md:col-end-8">
+            <section className="grid xl:place-items-center xl:justify-items-center relative row-start-2 row-end-3 col-start-1 items-center col-end-2 md:grid-cols-2 md:row-start-3 md:row-end-4 gap-8 md:col-start-2 md:col-end-8 xl:col-start-2 xl:col-end-12 xl:row-start-3 xl:row-end-6">
                 <Timeline />
             </section>
 
-            <section className="grid grid-cols-3 overflow-x-auto md:row-start-1 gap-8 text-white duration-200 md:row-end-3 md:col-start-2 md:col-end-8">
+            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-12 gap-8 text-white duration-200">
 
                 <div className=" bg-white/[25%] rounded backdrop-blur-3xl dark:bg-cardDark dark:text-darkSecondary text-sky-800 relative duration-200 p-7 flex flex-col justify-center">
                         <h1 className="text-[1.6rem] font-light mb-4 text-center text-white">Weather Information</h1>
@@ -32,8 +32,7 @@ const Information = ({data, name, region, condition, feelslike_c, temp_c}) => {
                                 {filtering(data, information).map((item, index) => {
                                     return (
                                         <h1 key={index} className="flex flex-row text-left w-full  font-montserrat font-[600] text-md my-1"> 
-                                        <span className="w-[45%] md:w-[40%]">{informationDesc[index]}</span>
-                                        <span className='w-[15%] md:w-[20%]'>:</span>
+                                        <span className="">{informationDesc[index]}</span>
                                         <span className="font-dosis dark:text-silver">{index === 1  ? `${informationUnit[index]} ${data[item]}` : `${data[item]} ${informationUnit[index]}` }</span> 
                                     </h1>
                                     )
