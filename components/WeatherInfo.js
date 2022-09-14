@@ -7,7 +7,7 @@ const WeatherInfo = () => {
     const {current, location} = singleWeather
 
     return (
-        <section data-aos="fade-up" className="w-[98%] mx-auto mt-[8%] py-8">
+        <section data-aos="fade-up" className="w-[98%] mx-auto mt-[8%] md:py-8">
 
             <Information {...current} {...location} data={current}/>
             <HourlyForcast />
